@@ -11,7 +11,7 @@ const Header = () => {
             alt=""
           />
         </Link>
-        <div className="hidden md:inline-flex items-center space-x-5">
+        <div className="hidden md:inline-flex items-center space-x-5 cursor-pointer">
           <h3>About</h3>
           <h3>Contact</h3>
           <h3 className="text-white bg-green-600 px-4 py-1 rounded-full">
@@ -20,7 +20,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex items-center space-x-5 text-green-600 ">
+      <div className="flex items-center space-x-5 text-green-600 cursor-pointer">
         <h3>Sign In</h3>
         <h3 className="px-4 py-1 rounded-full border border-green-600">
           Get Started
