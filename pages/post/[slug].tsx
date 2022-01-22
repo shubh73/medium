@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from "next/head";
 import { GetStaticProps } from "next";
 import Header from "../../components/Header";
 import { urlFor } from "../../lib/sanity";
@@ -19,10 +20,22 @@ interface IFormInput {
   comment: string;
 }
 
-const errorName = () => toast.error("The Name field is required!");
-const errorEmail = () => toast.error("The Email field is required!");
-const errorComment = () => toast.error("The Comment field is required!");
-const successSubmit = () => toast.success("Yayy comment submitted");
+const errorName = () =>
+  toast.error("The Name field is required!", {
+    id: "name",
+  });
+const errorEmail = () =>
+  toast.error("The Email field is required!", {
+    id: "email",
+  });
+const errorComment = () =>
+  toast.error("The Comment field is required!", {
+    id: "comment",
+  });
+const successSubmit = () =>
+  toast.success("Yayy comment submitted", {
+    id: "successSubmit",
+  });
 
 const Post = ({ post }: Props) => {
   const [submitted, setSubmitted] = useState(false);
@@ -53,6 +66,10 @@ const Post = ({ post }: Props) => {
       <div>
         <Toaster />
       </div>
+      <Head>
+        <title>{post.slug.current}</title>
+        <link rel="icon" href="/favicon.svg" />
+      </Head>
       <main>
         <Header />
 
@@ -163,9 +180,9 @@ const Post = ({ post }: Props) => {
             </label>
 
             {/* Errors */}
-            {errors.name && errorName()}
-            {errors.email && errorEmail()}
-            {errors.comment && errorComment()}
+            {errors.name && <div className="hidden">{errorName()}</div>}
+            {errors.email && <div className="hidden">{errorEmail()}</div>}
+            {errors.comment && <div className="hidden">{errorComment()}</div>}
 
             <input
               type="submit"
@@ -174,7 +191,7 @@ const Post = ({ post }: Props) => {
           </form>
         )}
 
-        <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow shadow-[#ffc017] space-y-2">
+        <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow shadow-[#ffc017] space-y-2 rounded">
           <h3 className="text-3xl font-semibold">Comments</h3>
           <hr className="pb-2" />
           {post.comments.map((comment) => (
