@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99" alt="Star Badge"/>
 </p>
 
-✍🏻 Medium UI clone using Next.js + Tailwind CSS.
+✍🏻 Medium UI clone using NextJS + Tailwind CSS.
 
 > The clone is integrated with Sanity CMS. Data is fetched using Incremental Static Regeneration and Server-side Rendering making it extremely performant and quick.
 
