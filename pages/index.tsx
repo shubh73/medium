@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Posts from "../components/Posts";
@@ -20,6 +21,8 @@ export default function Home({ posts }: Props) {
       <Header />
       <Hero />
       <Posts posts={posts} />
+      <hr className="bg-[#757575] w-[95%] mt-12 h-[0.5px] mx-auto" />
+      <Footer />
     </div>
   );
 }
