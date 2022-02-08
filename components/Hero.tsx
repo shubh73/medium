@@ -12,7 +12,7 @@ const Hero = () => {
           It's easy and free to post your thinking on any topic and connect with
           millions of readers.
         </h2>
-        <button className="border border-black bg-white px-4 py-2 rounded-full font-medium">Start Writing</button>
+        <button className="border border-black bg-white px-4 py-2 rounded-full font-medium active:scale-90 transition duration-100">Start Writing</button>
       </div>
 
       <img
