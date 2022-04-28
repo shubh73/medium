@@ -166,7 +166,7 @@ const Post = ({ post }: Props) => {
                 {...register("email", { required: true })}
                 className="shadow border rounded py-2 px-3 form-input mt-1 block w-full focus:outline-[#3f8dce] "
                 type="email"
-                placeholder="Shubh Porwal"
+                placeholder="shubhporwal@gmail.com"
               />
             </label>
             <label className="block mb-5">
@@ -174,7 +174,7 @@ const Post = ({ post }: Props) => {
               <textarea
                 {...register("comment", { required: true })}
                 className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full focus:outline-[#3f8dce] "
-                placeholder="Shubh Porwal"
+                placeholder="What are your thoughts?"
                 rows={8}
               />
             </label>
